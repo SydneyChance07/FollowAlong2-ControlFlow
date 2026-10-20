@@ -6,23 +6,37 @@ package part07;
 // In-class exercise — we do this together in class. Not graded, but commit it.
 // The README (In-class exercise) has the steps and the output to match.
 
+
 public class InClass {
     public static void main(String[] args) {
+        // Check whether each rover can drive.
+        System.out.println("Can drive? " + canDrive(80, false));
+        System.out.println("Can drive? " + canDrive(80, true));
+        System.out.println("Can drive? " + canDrive(10, false));
 
-        // STEP 1 — we call our method here, then write a while loop together.
+        // Start with a full battery.
+        int battery = 100;
+        // Keep driving while the battery is at least 20.
+        while (battery >= 20) {
+            // Print the current battery level.
+            System.out.println("Driving... battery " + battery + "%");
+            // Use 25 percent of the battery.
+            battery -= 25;
+        }
+        // Print the battery level where the rover stopped.
+        System.out.println("Stopped at " + battery + "%");
 
-
-
-        // STEP 2 — fix the bugs. Each line below has ONE mistake.
-        // Move ONE line at a time above the /* line, so Java sees it.
-        // Read the red error. Fix it. Run it. Then do the next line.
-        /*
-        boolean inRange = battery > 20 and battery < 100;
-        boolean almostFull = battery > 20 || < 100;
-        boolean ready = battery && true;
-        */
+        // Check whether the battery is between 20 and 100.
+        boolean inRange = battery > 20 && battery < 100;
+        // Check whether the battery is over 20 or under 100.
+        boolean almostFull = battery > 20 || battery < 100;
+        // Check whether the battery is positive.
+        boolean ready = battery > 0 && true;
     }
 
-    // STEP 1 (continued) — we write the canDrive method here, outside main.
-
+    // Decide whether the rover can drive.
+    static boolean canDrive(int battery, boolean docked) {
+        // The rover needs enough battery and must not be docked.
+        return battery > 20 && !docked;
+    }
 }

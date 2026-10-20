@@ -9,38 +9,40 @@ package part09;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class InClass {
     public static void main(String[] args) {
+        // Step 1: Create a Scanner and a Random.
+        // Step 2: Pick a secret number from 1 to 100.
+        // Step 3: Create variables for the guess and guess count.
+        // Step 4: Tell the player the number range.
+        // Step 5: Ask for guesses inside a loop.
+        // Step 6: Count each guess and say whether it is high or low.
+        // Step 7: Stop when the guess matches the secret.
+        // Step 8: Print the number of guesses.
 
-        // STEP 1 — PLAN the guessing game together. No code yet.
-        // Write each step of the game as a // comment, in plain English, in order.
-        // 1.
-        // 2.
-        // 3.
-
-
-
-        // STEP 2 — fix the bugs. Each bug below is inside its own /* ... */.
-        // Do ONE bug at a time: delete its /* line and its */ line, so Java sees it.
-        // Read the red error (or watch what happens). Fix it. Run it. Then do the next bug.
-
-        /*
-        Random random = new Random;
+        // Create a Random object.
+        Random random = new Random();
+        // Print a random number from 1 to 6.
         System.out.println("Random works: " + (random.nextInt(6) + 1));
-        */
 
-        /*
+        // Create a Scanner to read a number.
         Scanner scanner = new Scanner(System.in);
+        // Ask the user for a number.
         System.out.print("Type a number: ");
-        int guess = scanner.nextint();
+        // Read the number.
+        int guess = scanner.nextInt();
+        // Print the number entered.
         System.out.println("You typed " + guess);
-        */
 
-        /*
+        // Start the guess counter at one.
         int count = 1;
+        // Repeat three times.
         while (count <= 3) {
+            // Print the current guess number.
             System.out.println("Guess number " + count);
+            // Increase the counter so the loop can stop.
+            count++;
         }
-        */
     }
 }

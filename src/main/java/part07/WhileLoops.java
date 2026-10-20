@@ -16,6 +16,24 @@ package part07;
 //
 // If your program never stops: click the red square (Stop) in the Run window.
 
-public class WhileLoops {
 
+import java.util.Scanner;
+
+public class WhileLoops {
+    public static void main(String[] args) {
+        // Create a Scanner for user input.
+        Scanner scanner = new Scanner(System.in);
+        // Start with an empty name.
+        String name = "";
+        // Keep asking while the name is blank.
+        do {
+            // Ask the user for their name.
+            System.out.print("Enter your name: ");
+            // Read the name.
+            name = scanner.nextLine();
+            // Repeat if the name is blank.
+        } while (name.isBlank());
+        // Greet the user.
+        System.out.println("Hello " + name);
+    }
 }

@@ -9,28 +9,41 @@ package part09;
 // Each method already has its top line. The inputs are in the parentheses.
 // Replace the line marked YOUR CODE so the method returns the right answer.
 
-public class Challenge {
 
-    // The price of a movie ticket, in dollars.
-    //   Younger than 5          -> 0  (free)
-    //   65 or older             -> 5
-    //   a student (any other age) -> 7
-    //   everyone else           -> 10
-    // ticketPrice(3, false)  should return 0
-    // ticketPrice(70, true)  should return 5   (age rules come first)
-    // ticketPrice(19, true)  should return 7
-    // ticketPrice(30, false) should return 10
+
+public class Challenge {
     public static int ticketPrice(int age, boolean student) {
-        return 0;   // YOUR CODE
+        // Children younger than five get in free.
+        if (age < 5) {
+            return 0;
+            // People aged 65 or older pay five dollars.
+        } else if (age >= 65) {
+            return 5;
+            // Students pay seven dollars.
+        } else if (student) {
+            return 7;
+            // Everyone else pays ten dollars.
+        } else {
+            return 10;
+        }
     }
 
-    // The letter grade for a score.
-    //   90 or more -> "A"    80 or more -> "B"    70 or more -> "C"
-    //   60 or more -> "D"    anything lower -> "F"
-    // letterGrade(95) should return "A"
-    // letterGrade(80) should return "B"
-    // letterGrade(59) should return "F"
     public static String letterGrade(int score) {
-        return "";   // YOUR CODE
+        // Check for an A.
+        if (score >= 90) {
+            return "A";
+            // Check for a B.
+        } else if (score >= 80) {
+            return "B";
+            // Check for a C.
+        } else if (score >= 70) {
+            return "C";
+            // Check for a D.
+        } else if (score >= 60) {
+            return "D";
+            // Give an F to any lower score.
+        } else {
+            return "F";
+        }
     }
 }

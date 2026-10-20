@@ -13,6 +13,47 @@ package part09;
 // SECTION B — COMMENTS: when you finish, put a // comment ABOVE every line of code,
 //    saying in YOUR OWN WORDS what that line does.
 
-public class GuessingGame {
 
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class GuessingGame {
+    public static void main(String[] args) {
+        // Create a Scanner to read the player's guesses.
+        Scanner scanner = new Scanner(System.in);
+        // Create a Random to pick the secret number.
+        Random random = new Random();
+
+        // Pick a secret number from 1 to 100.
+        int secret = random.nextInt(100) + 1;
+        // Start the guess at zero.
+        int guess = 0;
+        // Start the guess counter at zero.
+        int count = 0;
+
+        // Tell the player the number range.
+        System.out.println("I'm thinking of a number between 1 and 100.");
+
+        // Keep playing until the guess matches the secret.
+        while (guess != secret) {
+            // Ask the player to enter a guess on the same line.
+            System.out.print("Your guess: ");
+            // Read the player's guess.
+            guess = scanner.nextInt();
+            // Count this guess.
+            count++;
+
+            // Check whether the guess is too high.
+            if (guess > secret) {
+                System.out.println("Too high!");
+                // Check whether the guess is too low.
+            } else if (guess < secret) {
+                System.out.println("Too low!");
+            }
+        }
+
+        // Tell the player they won and show the number of guesses.
+        System.out.println("Correct! You got it in " + count + " guesses.");
+    }
 }

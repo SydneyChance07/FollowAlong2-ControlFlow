@@ -10,24 +10,32 @@ package part08;
 // Each method already has its top line. The inputs are in the parentheses.
 // Replace the line marked YOUR CODE so the method returns the right answer.
 
-public class Challenge {
 
-    // Repeat word n times, all stuck together.
-    // repeatWord("hi", 3)   should return "hihihi"
-    // repeatWord("Go", 1)   should return "Go"
-    // repeatWord("abc", 0)  should return ""   (zero times = an empty String)
+public class Challenge {
     public static String repeatWord(String word, int n) {
-        return "";   // YOUR CODE
+        // Start with an empty result.
+        String result = "";
+        // Add the word n times.
+        for (int i = 0; i < n; i++) {
+            result += word;
+        }
+        // Return the repeated word.
+        return result;
     }
 
-    // Build a triangle of stars with the given number of rows.
-    // Row 1 has 1 star, row 2 has 2 stars, and so on. Every row ends with \n.
-    // triangle(3) should return "*\n**\n***\n"   which prints as:
-    //     *
-    //     **
-    //     ***
-    // triangle(0) should return ""
     public static String triangle(int rows) {
-        return "";   // YOUR CODE
+        // Start with an empty triangle.
+        String result = "";
+        // Build each row.
+        for (int i = 1; i <= rows; i++) {
+            // Add the correct number of stars to this row.
+            for (int j = 1; j <= i; j++) {
+                result += "*";
+            }
+            // End each row with a newline.
+            result += "\n";
+        }
+        // Return the completed triangle.
+        return result;
     }
 }

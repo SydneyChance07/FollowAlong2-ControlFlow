@@ -14,6 +14,60 @@ package part06;
 // SECTION B — COMMENTS: when you finish, put a // comment ABOVE every line of code,
 //    saying in YOUR OWN WORDS what that line does.
 
-public class Switches {
 
+
+public class Switches {
+    public static void main(String[] args) {
+        // Store the day to check.
+        String day = "Pizza";
+        // Compare the day with each case.
+        switch (day) {
+            // Check whether the day is Sunday.
+            case "Sunday":
+                // Print the Sunday message.
+                System.out.println("It is Sunday");
+                // Exit the switch.
+                break;
+            // Check whether the day is Monday.
+            case "Monday":
+                // Print the Monday message.
+                System.out.println("It is Monday");
+                // Exit the switch.
+                break;
+            // Check whether the day is Tuesday.
+            case "Tuesday":
+                // Print the Tuesday message.
+                System.out.println("It is Tuesday");
+                // Exit the switch.
+                break;
+            // Check whether the day is Wednesday.
+            case "Wednesday":
+                // Print the Wednesday message.
+                System.out.println("It is Wednesday");
+                // Exit the switch.
+                break;
+            // Check whether the day is Thursday.
+            case "Thursday":
+                // Print the Thursday message.
+                System.out.println("It is Thursday");
+                // Exit the switch.
+                break;
+            // Check whether the day is Friday.
+            case "Friday":
+                // Print the Friday message.
+                System.out.println("It is Friday");
+                // Exit the switch.
+                break;
+            // Check whether the day is Saturday.
+            case "Saturday":
+                // Print the Saturday message.
+                System.out.println("It is Saturday");
+                // Exit the switch.
+                break;
+            // Handle anything that is not a day.
+            default:
+                // Print the invalid day.
+                System.out.println(day + " is not a day");
+        }
+    }
 }
