@@ -1,0 +1,592 @@
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #56a8f5;}
+.s3 { color: #6aab73;}
+.s4 { color: #c77dbb; font-style: italic;}
+.s5 { color: #d5b778;}
+.s6 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+README.md</font>
+</center></td></tr></table>
+<pre><span class="s0"># </span><span class="s1">Part 09 — Checkpoint: build a guessing game</span>
+
+<span class="s1">**Checkpoint · we do this in class · due before the next lecture · No AI**</span>
+
+<span class="s1">**There is no video in this part.** You find out what you can build **on your own**. You</span>
+<span class="s1">write a whole program from an empty class: a number guessing game. Everything you need, you</span>
+<span class="s1">already learned on parts 03 to 07.</span>
+
+<span class="s1">This is supposed to feel harder than following along. That's the point. When you get</span>
+<span class="s1">stuck, look back at the part that covered it. That is not cheating. That is how programmers</span>
+<span class="s1">work.</span>
+
+<span class="s1">**What you use:**</span>
+
+<span class="s0">- </span><span class="s1">`Scanner` to read what the user types (part 03)</span>
+<span class="s0">- </span><span class="s1">`Random` to pick a secret number (part 05)</span>
+<span class="s0">- </span><span class="s1">`if` / `else if` to say &quot;too high&quot; or &quot;too low&quot; (part 06)</span>
+<span class="s0">- </span><span class="s1">a `while` loop to keep asking until they get it (part 07)</span>
+
+<span class="s0">&gt; </span><span class="s1">**Before you start:** open any `.java` file. Click inside it. Type `Sys` and wait two</span>
+<span class="s0">&gt; </span><span class="s1">seconds. If a list pops up, **stop.** Autocomplete is back on. Do</span>
+<span class="s0">&gt; </span><span class="s1">[Part 00, step 4](</span><span class="s2">https://github.com/DSU-CSCI-121-F26/FollowAlong1-Basics/blob/main/src/main/java/part00/README.md#step-4--turn-off-the-autocomplete-and-the-ai</span><span class="s1">) again</span>
+<span class="s0">&gt; </span><span class="s1">before you type anything else.</span>
+
+<span class="s0">---</span>
+
+<span class="s0">## </span><span class="s1">How this part works</span>
+
+<span class="s1">**In class, together:** we start Section A (build), and we do the **in-class</span>
+<span class="s1">exercise** together.</span>
+
+<span class="s1">**On your own:** you finish whatever we did not get to, then do Sections B, C and D.</span>
+
+<span class="s0">## </span><span class="s1">How this part is graded</span>
+
+<span class="s1">This part has **four graded sections**. Each one is worth **25 points**.</span>
+
+<span class="s0">| </span><span class="s1">Section </span><span class="s0">| </span><span class="s1">File </span><span class="s0">| </span><span class="s1">Points </span><span class="s0">| </span><span class="s1">Your commit message </span><span class="s0">|</span>
+<span class="s0">|---|---|---|---|</span>
+<span class="s0">| </span><span class="s1">**A · Build** </span><span class="s0">| </span><span class="s1">`GuessingGame.java` </span><span class="s0">| </span><span class="s1">25 </span><span class="s0">| </span><span class="s1">`part09 build: guessing game from an empty file` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">**B · Comments** </span><span class="s0">| </span><span class="s1">`GuessingGame.java` </span><span class="s0">| </span><span class="s1">25 </span><span class="s0">| </span><span class="s1">`part09 comments: explained every line of the build` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">**C · Stretch** </span><span class="s0">| </span><span class="s1">`Stretch.java` </span><span class="s0">| </span><span class="s1">25 </span><span class="s0">| </span><span class="s1">`part09 stretch: prediction, sum, pick a number, and dice` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">**D · Challenge** </span><span class="s0">| </span><span class="s1">`Challenge.java` </span><span class="s0">| </span><span class="s1">25 </span><span class="s0">| </span><span class="s1">`part09 challenge: ticketPrice and letterGrade` </span><span class="s0">|</span>
+
+<span class="s1">Section A is called **Build** instead of Follow along, because there is nothing to</span>
+<span class="s1">follow. Notice its commit message starts with `part09 build:`.</span>
+
+<span class="s1">When you finish a section, you **commit** it with the message in the table. That commit is</span>
+<span class="s1">how I know you finished it. **You do not send me anything on Canvas.** A program I run reads</span>
+<span class="s1">your commit messages, so **type each one exactly as shown.**</span>
+
+<span class="s0">&gt; </span><span class="s1">**No commit, no credit.** If a section has no commit, it gets **0**, even if the code is</span>
+<span class="s0">&gt; </span><span class="s1">on your laptop. Everything must be **pushed before the next lecture starts.**</span>
+
+<span class="s1">The warm-up and the in-class exercise are practice. They are not graded, but do them. They</span>
+<span class="s1">make the rest easier.</span>
+
+<span class="s0">---</span>
+
+<span class="s0">## </span><span class="s1">Warm-up — 5 minutes (practice, not graded)</span>
+
+<span class="s0">1. </span><span class="s1">Open `part08/Stretch.java`. Look at your **Stretch B1 (Liftoff)** for **30 seconds**.</span>
+<span class="s0">2. </span><span class="s1">Close it.</span>
+<span class="s0">3. </span><span class="s1">Open `part09/Warmup.java`. **Without looking back**, type it again, from memory. You have</span>
+   <span class="s1">to type `main` yourself too.</span>
+<span class="s0">4. </span><span class="s1">Run it with the **green ▶** next to `main`. It should print:</span>
+
+<span class="s0">```</span>
+<span class="s3">5</span>
+<span class="s3">4</span>
+<span class="s3">3</span>
+<span class="s3">2</span>
+<span class="s3">1</span>
+<span class="s3">Liftoff!</span>
+<span class="s0">```</span>
+
+<span class="s0">5. </span><span class="s1">If it does not match, try to fix it yourself first. Look back at `part08/Stretch.java`</span>
+   <span class="s1">only if you are really stuck.</span>
+
+<span class="s0">---</span>
+
+<span class="s0">## </span><span class="s1">In-class exercise — plan the game (together, not graded)</span>
+
+<span class="s1">We do this one together in class, in `InClass.java`, **before** anyone writes the game.</span>
+<span class="s1">Everyone types their own copy.</span>
+
+<span class="s0">### </span><span class="s1">Step 1 — Plan it in plain English</span>
+
+<span class="s1">Do not write any code yet. Under the `STEP 1` comment, write the **steps of the guessing</span>
+<span class="s1">game** as numbered `//` comments, in order, in plain English.</span>
+
+<span class="s1">Read **What the game does** and the **sample run** in Section A below. Then answer these</span>
+<span class="s1">questions together. Each answer becomes one or more steps in your plan:</span>
+
+<span class="s0">- </span><span class="s1">What does the computer need to **remember** the whole time? (Those become variables.)</span>
+<span class="s0">- </span><span class="s1">What happens **only once**, at the start?</span>
+<span class="s0">- </span><span class="s1">What happens **again and again**? (That goes inside a loop.)</span>
+<span class="s0">- </span><span class="s1">When does the repeating **stop**?</span>
+<span class="s0">- </span><span class="s1">What happens **once**, at the very end?</span>
+
+<span class="s1">When your plan is done, you have a map for Section A. You will copy it into</span>
+<span class="s1">`GuessingGame.java` and write the code under each step.</span>
+
+<span class="s0">### </span><span class="s1">Step 2 — Fix the bugs</span>
+
+<span class="s0">&gt; </span><span class="s1">**Different from before:** some of these bugs are more than one line long, so this time</span>
+<span class="s0">&gt; </span><span class="s1">each bug has its **own** `/* ... */`. Instead of moving a line, you delete the `/*` and</span>
+<span class="s0">&gt; </span><span class="s1">`*/` around **one** bug.</span>
+
+<span class="s1">Under `STEP 2` there are three bugs. Each one is inside its own `/* ... */` comment, so it</span>
+<span class="s1">does not stop your program from running. One at a time:</span>
+
+<span class="s0">1. </span><span class="s1">Pick **one** bug. Delete its `/*` line and its `*/` line. Now Java can see it.</span>
+<span class="s0">2. </span><span class="s1">Read the **red error**, or run it and watch what happens.</span>
+<span class="s0">3. </span><span class="s1">Fix it. Run the program.</span>
+<span class="s0">4. </span><span class="s1">Do the next bug.</span>
+
+<span class="s0">| </span><span class="s1">The bug </span><span class="s0">| </span><span class="s1">What happens </span><span class="s0">|</span>
+<span class="s0">|---|---|</span>
+<span class="s0">| </span><span class="s1">`Random random = new Random;` </span><span class="s0">| </span><span class="s1">Red error: `'(' or '[' expected` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">`int guess = scanner.nextint();` </span><span class="s0">| </span><span class="s1">Red error: `cannot find symbol` … `symbol: method nextint()` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">A `while (count &lt;= 3)` loop that never changes `count` </span><span class="s0">| </span><span class="s1">**No red error.** It prints `Guess number 1` forever. Stop it with the red **■ Stop** button in the Run window </span><span class="s0">|</span>
+
+<span class="s1">**About the last one:** the loop keeps going while `count &lt;= 3`. Nothing inside the loop</span>
+<span class="s1">ever changes `count`, so it is **always** 1. A loop needs something inside it that moves it</span>
+<span class="s1">toward stopping. Add `count++;` inside the loop.</span>
+
+<span class="s0">### </span><span class="s1">✅ Commit the in-class exercise</span>
+
+<span class="s0">```</span><span class="s4">bash</span>
+<span class="s3">git add -A</span>
+<span class="s3">git commit -m &quot;part09 in-class: plan the game and fix the bugs&quot;</span>
+<span class="s0">```</span>
+
+<span class="s0">---</span>
+
+<span class="s0">## </span><span class="s1">Section A — Build the guessing game (25 points)</span>
+
+<span class="s1">*We start this together in class. Finish it on your own if we run out of time.*</span>
+
+<span class="s1">Open `GuessingGame.java`. It is an empty class. You write everything, including `main`.</span>
+
+<span class="s0">### </span><span class="s1">What the game does</span>
+
+<span class="s0">1. </span><span class="s1">The computer picks a **secret number** from 1 to 100. The player can't see it.</span>
+<span class="s0">2. </span><span class="s1">The player types a guess.</span>
+<span class="s0">3. </span><span class="s1">If the guess is too big, the game says `Too high!`. If it's too small, `Too low!`.</span>
+<span class="s0">4. </span><span class="s1">Steps 2 and 3 repeat until the player gets it right.</span>
+<span class="s0">5. </span><span class="s1">Then the game says how many guesses it took.</span>
+
+<span class="s0">### </span><span class="s1">Here is a sample run</span>
+
+<span class="s1">The numbers after `Your guess:` are what the **player** typed. The secret number was 37.</span>
+
+<span class="s0">```</span>
+<span class="s3">I'm thinking of a number between 1 and 100.</span>
+<span class="s3">Your guess: 50</span>
+<span class="s3">Too high!</span>
+<span class="s3">Your guess: 25</span>
+<span class="s3">Too low!</span>
+<span class="s3">Your guess: 37</span>
+<span class="s3">Correct! You got it in 3 guesses.</span>
+<span class="s0">```</span>
+
+<span class="s1">Your game should print **exactly** these messages, word for word. The numbers will be</span>
+<span class="s1">different every time, because the secret number is random.</span>
+
+<span class="s0">### </span><span class="s1">The rules: your program must do all of these</span>
+
+<span class="s1">Check each one off as you finish it.</span>
+
+<span class="s0">- </span><span class="s1">[ ] </span><span class="s0">1. </span><span class="s1">Import `Scanner` **and** `Random`. Both lines go **below** `package part09;`.</span>
+<span class="s0">- </span><span class="s1">[ ] </span><span class="s0">2. </span><span class="s1">Make a `Scanner` (part 03) and a `Random` (part 05) inside `main`.</span>
+<span class="s0">- </span><span class="s1">[ ] </span><span class="s0">3. </span><span class="s1">Pick the secret number with `random.nextInt(100) + 1`. Save it in an `int`</span>
+      <span class="s1">variable.</span>
+<span class="s0">- </span><span class="s1">[ ] </span><span class="s0">4. </span><span class="s1">Make an `int` variable for the guess, and one to **count** the guesses. Start</span>
+      <span class="s1">both at `0`.</span>
+<span class="s0">- </span><span class="s1">[ ] </span><span class="s0">5. </span><span class="s1">Print `I'm thinking of a number between 1 and 100.`</span>
+<span class="s0">- </span><span class="s1">[ ] </span><span class="s0">6. </span><span class="s1">Use a **`while` loop** (part 07) that keeps going **as long as the guess is not</span>
+      <span class="s1">equal to the secret number**.</span>
+<span class="s0">- </span><span class="s1">[ ] </span><span class="s0">7. </span><span class="s1">Inside the loop: print `Your guess: ` with **`print`**, not `println`, so the</span>
+      <span class="s1">player types on the same line. Then read the guess with `scanner.nextInt()`.</span>
+<span class="s0">- </span><span class="s1">[ ] </span><span class="s0">8. </span><span class="s1">Inside the loop: add 1 to the guess counter.</span>
+<span class="s0">- </span><span class="s1">[ ] </span><span class="s0">9. </span><span class="s1">Inside the loop: use `if` / `else if` (part 06) to print `Too high!` or `Too low!`.</span>
+<span class="s0">- </span><span class="s1">[ ] </span><span class="s0">10. </span><span class="s1">**After** the loop: print `Correct! You got it in ` + the count + ` guesses.`</span>
+
+<span class="s0">### </span><span class="s1">Plan before you type</span>
+
+<span class="s1">Many programmers write the steps in plain English first, as comments. Then they write code</span>
+<span class="s1">under each comment. **You wrote a plan like this in class** (the in-class exercise above).</span>
+<span class="s1">Copy your plan into `main` in `GuessingGame.java`. **Missed class?** Use this one:</span>
+
+<span class="s0">```</span><span class="s4">java</span>
+        <span class="s3">// make a Scanner and a Random</span>
+
+        <span class="s3">// pick the secret number from 1 to 100</span>
+
+        <span class="s3">// make variables for the guess and the count</span>
+
+        <span class="s3">// say hello</span>
+
+        <span class="s3">// loop while the guess is wrong:</span>
+        <span class="s3">//     ask for a guess</span>
+        <span class="s3">//     count it</span>
+        <span class="s3">//     say too high or too low</span>
+
+        <span class="s3">// say they got it, and how many guesses</span>
+<span class="s0">```</span>
+
+<span class="s1">Now write the code for each step **under** its comment. You can delete these planning</span>
+<span class="s1">comments at the end, or keep them. (You will add your own line-by-line comments in Section B.)</span>
+
+<span class="s0">### </span><span class="s1">Where to look when you're stuck</span>
+
+<span class="s0">| </span><span class="s1">You need to... </span><span class="s0">| </span><span class="s1">Look at </span><span class="s0">|</span>
+<span class="s0">|---|---|</span>
+<span class="s0">| </span><span class="s1">read a number the user types </span><span class="s0">| </span><span class="s1">part 03, user input </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">pick a random number </span><span class="s0">| </span><span class="s1">part 05, random numbers. **Why `+ 1`?** `random.nextInt(100)` gives 0 to 99. Adding 1 makes it 1 to 100 </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">choose between &quot;too high&quot; and &quot;too low&quot; </span><span class="s0">| </span><span class="s1">part 06, `if` statements </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">repeat until they get it right </span><span class="s0">| </span><span class="s1">part 07, `while` loops </span><span class="s0">|</span>
+
+<span class="s0">### </span><span class="s1">How to test a random game</span>
+
+<span class="s1">The secret number changes every time, so it's hard to check that &quot;Too high&quot; and &quot;Too low&quot;</span>
+<span class="s1">are right. Here's the trick programmers use:</span>
+
+<span class="s0">1. </span><span class="s1">**For testing only**, add this line right after you pick the secret number:</span>
+
+<span class="s0">```</span><span class="s4">java</span>
+        <span class="s3">System.out.println(&quot;(secret: &quot; + secret + &quot;)&quot;);</span>
+<span class="s0">```</span>
+
+<span class="s0">2. </span><span class="s1">Run it. Now you can see the secret. Guess too high, then too low, then right. Check that</span>
+   <span class="s1">each message is correct and that the count is right.</span>
+<span class="s0">3. </span><span class="s1">**Delete that line before you commit.** A real game does not show the answer.</span>
+
+<span class="s0">### </span><span class="s1">Stuck? Check these first</span>
+
+<span class="s1">These are real error messages you might see:</span>
+
+<span class="s0">| </span><span class="s1">What you see </span><span class="s0">| </span><span class="s1">What is usually wrong </span><span class="s0">|</span>
+<span class="s0">|---|---|</span>
+<span class="s0">| </span><span class="s1">`cannot find symbol` and `symbol: class Random` (or `class Scanner`) </span><span class="s0">| </span><span class="s1">The import is missing. Click the red word, press `⌥ Enter` (Mac) / `Alt Enter` (Windows) → **Import class** </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">`variable guess might not have been initialized` </span><span class="s0">| </span><span class="s1">You wrote `int guess;` with no value. The loop checks `guess` before the player has typed anything. Start it at `0`: `int guess = 0;` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">`incompatible types: int cannot be converted to boolean` on an `if` line </span><span class="s0">| </span><span class="s1">You used **one** `=` (which **sets** a value). To **compare**, use `==`, or `&gt;` / `&lt;` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">The game never says `Correct!` </span><span class="s0">| </span><span class="s1">Check your `while` condition. It should keep going while `guess != secret` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">The game asks once and then ends </span><span class="s0">| </span><span class="s1">Your &quot;ask for a guess&quot; lines are **outside** the loop's `{ }`. Move them inside </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">The count is always `0` or always `1` </span><span class="s0">| </span><span class="s1">`guesses++` must be **inside** the loop, and the variable must be made **before** the loop </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">`Exception in thread &quot;main&quot; java.util.InputMismatchException` </span><span class="s0">| </span><span class="s1">You typed a word instead of a number. Run it again and type a whole number </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">You fixed your code, but the output did not change </span><span class="s0">| </span><span class="s1">You ran a **different file**. Use the ▶ **next to `main`** in the file you are working on </span><span class="s0">|</span>
+
+<span class="s0">### </span><span class="s1">✅ Commit Section A</span>
+
+<span class="s1">When your game works, and the &quot;secret&quot; testing line is deleted, type this in the terminal:</span>
+
+<span class="s0">```</span><span class="s4">bash</span>
+<span class="s3">git add -A</span>
+<span class="s3">git commit -m &quot;part09 build: guessing game from an empty file&quot;</span>
+<span class="s0">```</span>
+
+<span class="s0">---</span>
+
+<span class="s0">## </span><span class="s1">Section B — Comment every line (25 points)</span>
+
+<span class="s1">*On your own.*</span>
+
+<span class="s1">Now explain your own code. In `GuessingGame.java`, put a `//` comment **above every line of</span>
+<span class="s1">code**, saying **in your own words** what that line does.</span>
+
+<span class="s1">**Which lines need a comment?**</span>
+
+<span class="s0">- </span><span class="s1">**Yes:** every line that does something. That includes both `import` lines,</span>
+  <span class="s1">`public class GuessingGame`, `public static void main(...)`, every variable, the `while`</span>
+  <span class="s1">line, every `if` / `else if`, and every `System.out...` line.</span>
+<span class="s0">- </span><span class="s1">**No:** lines that are only `}`, and empty lines.</span>
+
+<span class="s1">**What makes a good comment?** Say what the line **does** and **why**. Do not just repeat</span>
+<span class="s1">the code in English.</span>
+
+<span class="s0">| </span><span class="s1">❌ Not enough </span><span class="s0">| </span><span class="s1">✅ Good </span><span class="s0">|</span>
+<span class="s0">|---|---|</span>
+<span class="s0">| </span><span class="s1">`// random number` </span><span class="s0">| </span><span class="s1">`// nextInt(100) gives 0 to 99, so I add 1 to get a secret number from 1 to 100` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">`// while loop` </span><span class="s0">| </span><span class="s1">`// keep asking for guesses until the player types the secret number` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">`// guesses++` </span><span class="s0">| </span><span class="s1">`// add 1 to the count every time the player guesses, so I can tell them the total at the end` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">`// print` </span><span class="s0">| </span><span class="s1">`// print (not println) so the player types their guess on the same line` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">`// if` </span><span class="s0">| </span><span class="s1">`// if the guess is bigger than the secret, tell them to go lower` </span><span class="s0">|</span>
+
+<span class="s1">**Rules:**</span>
+
+<span class="s0">1. </span><span class="s1">**Your own words.** I want to know what **you** think each line does.</span>
+<span class="s0">2. </span><span class="s1">**Not sure what a line does?** Write your best guess, and add `(not sure)` at the end.</span>
+   <span class="s1">An honest guess gets credit. A skipped line does not.</span>
+<span class="s0">3. </span><span class="s1">**Run it again when you're done.** Comments must not change how the game works.</span>
+
+<span class="s0">### </span><span class="s1">✅ Commit Section B</span>
+
+<span class="s0">```</span><span class="s4">bash</span>
+<span class="s3">git add -A</span>
+<span class="s3">git commit -m &quot;part09 comments: explained every line of the build&quot;</span>
+<span class="s0">```</span>
+
+<span class="s0">---</span>
+
+<span class="s0">## </span><span class="s1">Section C — Stretch (25 points)</span>
+
+<span class="s1">*On your own.*</span>
+
+<span class="s1">Do these in `Stretch.java`. There is no `main` in that file yet. **Type it yourself.** Put all</span>
+<span class="s1">of the stretch code in the same `main`, one part under the other. B2 and B3 need imports:</span>
+<span class="s1">add them below `package part09;`.</span>
+
+<span class="s0">### </span><span class="s1">Stretch A — guess first</span>
+
+<span class="s0">1. </span><span class="s1">Type this code inside `main`. **Do not run it yet.**</span>
+
+<span class="s0">```</span><span class="s4">java</span>
+<span class="s3">int count = 0;</span>
+<span class="s3">int n = 1;</span>
+<span class="s3">while (n &lt; 20) {</span>
+    <span class="s3">n = n * 2;</span>
+    <span class="s3">count++;</span>
+<span class="s3">}</span>
+<span class="s3">System.out.println(n + &quot; &quot; + count);</span>
+
+<span class="s3">int x = 7;</span>
+<span class="s3">while (x &gt; 0) {</span>
+    <span class="s3">if (x % 2 == 0) {</span>
+        <span class="s3">System.out.println(x + &quot; is even&quot;);</span>
+    <span class="s3">} else {</span>
+        <span class="s3">System.out.println(x + &quot; is odd&quot;);</span>
+    <span class="s3">}</span>
+    <span class="s3">x -= 3;</span>
+<span class="s3">}</span>
+<span class="s0">```</span>
+
+<span class="s0">2. </span><span class="s1">**Above that code**, write what you think it will print. Put your guess inside a</span>
+   <span class="s1">comment:</span>
+
+<span class="s0">```</span><span class="s4">java</span>
+<span class="s3">/* MY GUESS:</span>
+   <span class="s3">...</span>
+<span class="s3">*/</span>
+<span class="s0">```</span>
+
+<span class="s0">3. </span><span class="s1">Now run it.</span>
+<span class="s0">4. </span><span class="s1">Were you wrong about any line? **Keep your wrong guess.** Under it, add a comment that</span>
+   <span class="s1">says why you were wrong.</span>
+
+<span class="s5">&lt;details&gt;</span>
+<span class="s5">&lt;summary&gt;</span><span class="s6">Click to see the answer. Only after you have run it!</span><span class="s5">&lt;/summary&gt;</span>
+
+<span class="s0">```</span>
+<span class="s3">32 5</span>
+<span class="s3">7 is odd</span>
+<span class="s3">4 is even</span>
+<span class="s3">1 is odd</span>
+<span class="s0">```</span>
+
+<span class="s0">- </span><span class="s1">`n` doubles each time: 1 → 2 → 4 → 8 → 16 → 32. It stops when `n` is 32, because 32 is</span>
+  <span class="s1">not less than 20. That took **5** trips through the loop.</span>
+<span class="s0">- </span><span class="s1">`x` goes 7 → 4 → 1 → -2. It stops at -2, because -2 is not greater than 0. `%` gives the</span>
+  <span class="s1">remainder: `x % 2 == 0` is true for even numbers.</span>
+
+<span class="s5">&lt;/details&gt;</span>
+
+<span class="s0">### </span><span class="s1">Stretch B — three small loops</span>
+
+<span class="s1">**B1. Add up 1 to 10.** Use a `while` loop to add up the numbers from 1 to 10. Then print</span>
+<span class="s1">the total:</span>
+
+<span class="s0">```</span>
+<span class="s3">Sum: 55</span>
+<span class="s0">```</span>
+
+<span class="s1">**Hints:** make `int sum = 0;` and `int i = 1;`. In the loop, add `i` to `sum`, then add 1</span>
+<span class="s1">to `i`. Keep it short, about 6 lines. **The next part's warm-up is B1, from memory.**</span>
+
+<span class="s1">**B2. Pick a number.** Use a `Scanner`. Keep asking `Pick a number from 1 to 10: ` until the</span>
+<span class="s1">user types a number **from 1 to 10**. Then thank them. Sample run (the user typed 0, then</span>
+<span class="s1">15, then 7):</span>
+
+<span class="s0">```</span>
+<span class="s3">Pick a number from 1 to 10: 0</span>
+<span class="s3">Pick a number from 1 to 10: 15</span>
+<span class="s3">Pick a number from 1 to 10: 7</span>
+<span class="s3">Thanks! You picked 7.</span>
+<span class="s0">```</span>
+
+<span class="s1">**Hint:** start your variable at `0`, so the loop runs at least once. Keep looping while</span>
+<span class="s1">the number is less than 1 **or** greater than 10: `while (pick &lt; 1 || pick &gt; 10)`.</span>
+
+<span class="s1">**B3. Roll until six.** Use a `Random`. Roll a die (`random.nextInt(6) + 1`) and print each</span>
+<span class="s1">roll. Stop when you roll a 6. Then say how many rolls it took. Sample run (yours will be</span>
+<span class="s1">different, because it's random):</span>
+
+<span class="s0">```</span>
+<span class="s3">Rolled a 3</span>
+<span class="s3">Rolled a 1</span>
+<span class="s3">Rolled a 6</span>
+<span class="s3">It took 3 rolls to get a 6.</span>
+<span class="s0">```</span>
+
+<span class="s0">### </span><span class="s1">✅ Commit Section C</span>
+
+<span class="s0">```</span><span class="s4">bash</span>
+<span class="s3">git add -A</span>
+<span class="s3">git commit -m &quot;part09 stretch: prediction, sum, pick a number, and dice&quot;</span>
+<span class="s0">```</span>
+
+<span class="s0">---</span>
+
+<span class="s0">## </span><span class="s1">Section D — Challenge (25 points)</span>
+
+<span class="s1">*On your own.*</span>
+
+<span class="s1">Open `Challenge.java`. It has **two methods** for you to finish. A **test** checks your</span>
+<span class="s1">answers.</span>
+
+<span class="s0">### </span><span class="s1">How the methods work</span>
+
+<span class="s0">- </span><span class="s1">The **top line** of each method is already written. Don't change it.</span>
+<span class="s0">- </span><span class="s1">The **inputs** are inside the parentheses. In `ticketPrice(int age, boolean student)`, the</span>
+  <span class="s1">inputs are `age` and `student`. They already have values when your code runs.</span>
+<span class="s0">- </span><span class="s1">Your answer goes after **`return`**. Replace the line marked `// YOUR CODE`.</span>
+<span class="s0">- </span><span class="s1">You can have **more than one** `return`. When Java reaches a `return`, the method stops</span>
+  <span class="s1">right there and gives back that value.</span>
+
+<span class="s0">### </span><span class="s1">The two problems</span>
+
+<span class="s1">**1. `ticketPrice(int age, boolean student)`** — return the price of a movie ticket, in</span>
+<span class="s1">dollars:</span>
+
+<span class="s0">| </span><span class="s1">Who </span><span class="s0">| </span><span class="s1">Price </span><span class="s0">|</span>
+<span class="s0">|---|---|</span>
+<span class="s0">| </span><span class="s1">younger than 5 </span><span class="s0">| </span><span class="s1">`0` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">65 or older </span><span class="s0">| </span><span class="s1">`5` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">a student (any other age) </span><span class="s0">| </span><span class="s1">`7` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">everyone else </span><span class="s0">| </span><span class="s1">`10` </span><span class="s0">|</span>
+
+<span class="s1">**The age rules come first.** A 70-year-old student pays `5`, not `7`.</span>
+
+<span class="s0">| </span><span class="s1">Call </span><span class="s0">| </span><span class="s1">Returns </span><span class="s0">|</span>
+<span class="s0">|---|---|</span>
+<span class="s0">| </span><span class="s1">`ticketPrice(3, false)` </span><span class="s0">| </span><span class="s1">`0` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">`ticketPrice(70, true)` </span><span class="s0">| </span><span class="s1">`5` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">`ticketPrice(19, true)` </span><span class="s0">| </span><span class="s1">`7` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">`ticketPrice(30, false)` </span><span class="s0">| </span><span class="s1">`10` </span><span class="s0">|</span>
+
+<span class="s1">**2. `letterGrade(int score)`** — return the letter grade as a String:</span>
+
+<span class="s0">| </span><span class="s1">Score </span><span class="s0">| </span><span class="s1">Returns </span><span class="s0">|</span>
+<span class="s0">|---|---|</span>
+<span class="s0">| </span><span class="s1">90 or more </span><span class="s0">| </span><span class="s1">`&quot;A&quot;` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">80 or more </span><span class="s0">| </span><span class="s1">`&quot;B&quot;` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">70 or more </span><span class="s0">| </span><span class="s1">`&quot;C&quot;` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">60 or more </span><span class="s0">| </span><span class="s1">`&quot;D&quot;` </span><span class="s0">|</span>
+<span class="s0">| </span><span class="s1">anything lower </span><span class="s0">| </span><span class="s1">`&quot;F&quot;` </span><span class="s0">|</span>
+
+<span class="s1">**Hint for both:** use `if` / `else if` / `else`, and check in the right **order**. For</span>
+<span class="s1">grades, check 90 first. If you check 60 first, a 95 would get a `&quot;D&quot;`, because 95 is also 60</span>
+<span class="s1">or more.</span>
+
+<span class="s0">### </span><span class="s1">Run the test</span>
+
+<span class="s0">1. </span><span class="s1">In `Challenge.java`, press `⌘ ⇧ T` (Mac) or `Ctrl ⇧ T` (Windows). This opens</span>
+   <span class="s1">`ChallengeTest.java`.</span>
+<span class="s0">2. </span><span class="s1">Click the **green ▶** next to `class ChallengeTest`. Choose **Run 'ChallengeTest'**.</span>
+<span class="s0">3. </span><span class="s1">**Red ✗** means that answer is wrong. Click it and read **expected** (the right answer)</span>
+   <span class="s1">and **but was** (what your code gave).</span>
+<span class="s0">4. </span><span class="s1">Fix your code. Run the test again. Keep going until **every test is green ✔**.</span>
+
+<span class="s1">A couple of tests may be green before you start. That's because the starting code happens</span>
+<span class="s1">to be right for those. **All of them must be green at the end.**</span>
+
+<span class="s1">**Never change `ChallengeTest.java`.** Only change `Challenge.java`.</span>
+
+<span class="s0">### </span><span class="s1">✅ Commit Section D</span>
+
+<span class="s0">```</span><span class="s4">bash</span>
+<span class="s3">git add -A</span>
+<span class="s3">git commit -m &quot;part09 challenge: ticketPrice and letterGrade&quot;</span>
+<span class="s0">```</span>
+
+<span class="s0">---</span>
+
+<span class="s0">## </span><span class="s1">Hand it in: push before the next lecture</span>
+
+<span class="s0">### </span><span class="s1">1. Fill in your log</span>
+
+<span class="s1">At the bottom of this page, fill in the three lines under **My log**.</span>
+
+<span class="s0">### </span><span class="s1">2. Check your commits</span>
+
+<span class="s1">In the terminal, type:</span>
+
+<span class="s0">```</span><span class="s4">bash</span>
+<span class="s3">git log --oneline</span>
+<span class="s0">```</span>
+
+<span class="s1">Near the top of the list, you should see **your commits for this part**, newest first:</span>
+
+<span class="s0">```</span>
+<span class="s3">a1b2c3d part09 challenge: ticketPrice and letterGrade</span>
+<span class="s3">e4f5a6b part09 stretch: prediction, sum, pick a number, and dice</span>
+<span class="s3">c7d8e9f part09 comments: explained every line of the build</span>
+<span class="s3">9d8c7b6 part09 in-class: plan the game and fix the bugs</span>
+<span class="s3">0a1b2c3 part09 build: guessing game from an empty file</span>
+<span class="s0">```</span>
+
+<span class="s1">*(The letters and numbers at the start will be different for you. That is normal.)*</span>
+<span class="s1">Press `q` to get out of the list.</span>
+
+<span class="s1">**Missing one?** That section gets **0** right now. Go back, finish it, and make its</span>
+<span class="s1">commit. You have until the next lecture starts.</span>
+
+<span class="s1">**Typed a commit message wrong?** Make one more commit with the right message. Copy the</span>
+<span class="s1">right message from the table, and add `--allow-empty` so Git lets you commit without</span>
+<span class="s1">changing a file:</span>
+
+<span class="s0">```</span><span class="s4">bash</span>
+<span class="s3">git commit --allow-empty -m &quot;part09 comments: explained every line of the build&quot;</span>
+<span class="s0">```</span>
+
+<span class="s0">### </span><span class="s1">3. Push</span>
+
+<span class="s0">```</span><span class="s4">bash</span>
+<span class="s3">git add -A</span>
+<span class="s3">git commit -m &quot;part09 log&quot;</span>
+<span class="s3">git push</span>
+<span class="s0">```</span>
+
+<span class="s0">### </span><span class="s1">4. Check GitHub</span>
+
+<span class="s1">Go to your fork on GitHub (`github.com/your-username/FollowAlong2-ControlFlow`). Click the</span>
+<span class="s1">**commits** link (clock icon) above the file list. **All of this part's commits must be</span>
+<span class="s1">there.** If they are on your laptop but not on GitHub, you did not push, and I cannot see</span>
+<span class="s1">them.</span>
+
+<span class="s0">&gt; </span><span class="s1">**No commit, no credit.** A section with no commit gets 0. A commit that is not pushed</span>
+<span class="s0">&gt; </span><span class="s1">before the next lecture starts does not count.</span>
+
+<span class="s1">**Next part's warm-up:** type your Stretch B1 (Sum: 55) again, from memory.</span>
+
+<span class="s1">**Finished early? Start Part 10.** It is in the **next repo, FollowAlong3-DataAndMethods**. Its README</span>
+<span class="s1">shows you how to set it up (about 5 minutes). You don't have to wait for class.</span>
+
+<span class="s0">---</span>
+
+<span class="s0">## </span><span class="s1">My log</span>
+
+<span class="s1">Fill this in before you push. Type your answers after the colons.</span>
+
+<span class="s0">```</span>
+<span class="s3">Started:</span>
+<span class="s3">Finished:</span>
+<span class="s3">The line that took me the longest:</span>
+<span class="s0">```</span>
+
+<span class="s0">---</span>
+
+<span class="s0">## </span><span class="s1">Want more help?</span>
+
+<span class="s0">- </span><span class="s1">**Think Java** (free online book): [Chapter 5 — Conditionals and Logic](</span><span class="s2">https://books.trinket.io/thinkjava2/chapter5.html</span><span class="s1">)</span>
+  <span class="s1">for `if`, and [Chapter 6 — Loops and Strings](</span><span class="s2">https://books.trinket.io/thinkjava2/chapter6.html</span><span class="s1">)</span>
+  <span class="s1">for `while` loops.</span>
+<span class="s0">- </span><span class="s1">**Tutoring:** bring your laptop and this page. A guessing game that almost works is a</span>
+  <span class="s1">great thing to bring.</span>
+<span class="s0">- </span><span class="s1">**Office hours:** bring the error message and tell me what you already tried.</span>
+<span class="s0">- </span><span class="s1">**Classmates:** talk it over as much as you want. But **type your own code.**</span>
+</pre>
+</body>
+</html>

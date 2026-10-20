@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>GuessingGame.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+GuessingGame.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">part09</span><span class="s2">;</span>
+
+<span class="s3">// Part 09 — CHECKPOINT. No video in this part.</span>
+<span class="s3">// Video (only if you need a reminder): https://www.youtube.com/watch?v=xk4_1vDrzzo</span>
+<span class="s3">//   user input (Scanner) — part 03 · random numbers — part 05</span>
+<span class="s3">//   if statements — part 06 · while loops — part 07</span>
+<span class="s3">//</span>
+<span class="s3">// SECTION A — BUILD: write a number guessing game in this class, starting from nothing.</span>
+<span class="s3">//    The README has the full list of rules and a sample run.</span>
+<span class="s3">//    Leave the &quot;package part09;&quot; line and the class line alone. Type everything else,</span>
+<span class="s3">//    including main and the import lines.</span>
+<span class="s3">//</span>
+<span class="s3">// SECTION B — COMMENTS: when you finish, put a // comment ABOVE every line of code,</span>
+<span class="s3">//    saying in YOUR OWN WORDS what that line does.</span>
+
+
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Random</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">GuessingGame </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s3">// Create a Scanner to read the player's guesses.</span>
+        <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+        <span class="s3">// Create a Random to pick the secret number.</span>
+        <span class="s1">Random random </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Random</span><span class="s2">();</span>
+
+        <span class="s3">// Pick a secret number from 1 to 100.</span>
+        <span class="s0">int </span><span class="s1">secret </span><span class="s2">= </span><span class="s1">random</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">(</span><span class="s4">100</span><span class="s2">) + </span><span class="s4">1</span><span class="s2">;</span>
+        <span class="s3">// Start the guess at zero.</span>
+        <span class="s0">int </span><span class="s1">guess </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+        <span class="s3">// Start the guess counter at zero.</span>
+        <span class="s0">int </span><span class="s1">count </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+
+        <span class="s3">// Tell the player the number range.</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;I'm thinking of a number between 1 and 100.&quot;</span><span class="s2">);</span>
+
+        <span class="s3">// Keep playing until the guess matches the secret.</span>
+        <span class="s0">while </span><span class="s2">(</span><span class="s1">guess </span><span class="s2">!= </span><span class="s1">secret</span><span class="s2">) {</span>
+            <span class="s3">// Ask the player to enter a guess on the same line.</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s5">&quot;Your guess: &quot;</span><span class="s2">);</span>
+            <span class="s3">// Read the player's guess.</span>
+            <span class="s1">guess </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+            <span class="s3">// Count this guess.</span>
+            <span class="s1">count</span><span class="s2">++;</span>
+
+            <span class="s3">// Check whether the guess is too high.</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">guess </span><span class="s2">&gt; </span><span class="s1">secret</span><span class="s2">) {</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Too high!&quot;</span><span class="s2">);</span>
+                <span class="s3">// Check whether the guess is too low.</span>
+            <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">guess </span><span class="s2">&lt; </span><span class="s1">secret</span><span class="s2">) {</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Too low!&quot;</span><span class="s2">);</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+
+        <span class="s3">// Tell the player they won and show the number of guesses.</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Correct! You got it in &quot; </span><span class="s2">+ </span><span class="s1">count </span><span class="s2">+ </span><span class="s5">&quot; guesses.&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

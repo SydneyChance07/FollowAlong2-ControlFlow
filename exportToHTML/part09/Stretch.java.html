@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>Stretch.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Stretch.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">part09</span><span class="s2">;</span>
+
+<span class="s3">// Part 09 — CHECKPOINT. No video in this part.</span>
+<span class="s3">// Reminders: while loops — part 07 · Scanner — part 03 · Random — part 05</span>
+<span class="s3">// Video (only if you need it): https://www.youtube.com/watch?v=xk4_1vDrzzo</span>
+<span class="s3">//</span>
+<span class="s3">// SECTION C — Stretch. Do Stretch A, then Stretch B. The README says what each one should print.</span>
+<span class="s3">//</span>
+<span class="s3">// There is no main method here yet. Typing it is part of the stretch.</span>
+
+
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Random</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Stretch </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s3">/* MY GUESS: 
+           32 5 
+           7 is odd 
+           4 is even 
+           1 is odd 
+        */</span>
+
+        <span class="s3">// Start the count at zero.</span>
+        <span class="s0">int </span><span class="s1">count </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+        <span class="s3">// Start n at one.</span>
+        <span class="s0">int </span><span class="s1">n </span><span class="s2">= </span><span class="s4">1</span><span class="s2">;</span>
+        <span class="s3">// Double n while it is less than 20.</span>
+        <span class="s0">while </span><span class="s2">(</span><span class="s1">n </span><span class="s2">&lt; </span><span class="s4">20</span><span class="s2">) {</span>
+            <span class="s1">n </span><span class="s2">= </span><span class="s1">n </span><span class="s2">* </span><span class="s4">2</span><span class="s2">;</span>
+            <span class="s1">count</span><span class="s2">++;</span>
+        <span class="s2">}</span>
+        <span class="s3">// Print the final value and count.</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">n </span><span class="s2">+ </span><span class="s5">&quot; &quot; </span><span class="s2">+ </span><span class="s1">count</span><span class="s2">);</span>
+
+        <span class="s3">// Start x at seven.</span>
+        <span class="s0">int </span><span class="s1">x </span><span class="s2">= </span><span class="s4">7</span><span class="s2">;</span>
+        <span class="s3">// Repeat while x is positive.</span>
+        <span class="s0">while </span><span class="s2">(</span><span class="s1">x </span><span class="s2">&gt; </span><span class="s4">0</span><span class="s2">) {</span>
+            <span class="s3">// Check whether x is even.</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">x </span><span class="s2">% </span><span class="s4">2 </span><span class="s2">== </span><span class="s4">0</span><span class="s2">) {</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">x </span><span class="s2">+ </span><span class="s5">&quot; is even&quot;</span><span class="s2">);</span>
+                <span class="s3">// Handle odd numbers.</span>
+            <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">x </span><span class="s2">+ </span><span class="s5">&quot; is odd&quot;</span><span class="s2">);</span>
+            <span class="s2">}</span>
+            <span class="s3">// Subtract three from x.</span>
+            <span class="s1">x </span><span class="s2">-= </span><span class="s4">3</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s3">// Start the sum at zero.</span>
+        <span class="s0">int </span><span class="s1">sum </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+        <span class="s3">// Start counting at one.</span>
+        <span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s4">1</span><span class="s2">;</span>
+        <span class="s3">// Add the numbers from 1 through 10.</span>
+        <span class="s0">while </span><span class="s2">(</span><span class="s1">i </span><span class="s2">&lt;= </span><span class="s4">10</span><span class="s2">) {</span>
+            <span class="s1">sum </span><span class="s2">+= </span><span class="s1">i</span><span class="s2">;</span>
+            <span class="s1">i</span><span class="s2">++;</span>
+        <span class="s2">}</span>
+        <span class="s3">// Print the total.</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Sum: &quot; </span><span class="s2">+ </span><span class="s1">sum</span><span class="s2">);</span>
+
+        <span class="s3">// Create a Scanner for user input.</span>
+        <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+        <span class="s3">// Start with an invalid number.</span>
+        <span class="s0">int </span><span class="s1">pick </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+        <span class="s3">// Keep asking while the number is outside 1 through 10.</span>
+        <span class="s0">while </span><span class="s2">(</span><span class="s1">pick </span><span class="s2">&lt; </span><span class="s4">1 </span><span class="s2">|| </span><span class="s1">pick </span><span class="s2">&gt; </span><span class="s4">10</span><span class="s2">) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s5">&quot;Pick a number from 1 to 10: &quot;</span><span class="s2">);</span>
+            <span class="s1">pick </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+        <span class="s2">}</span>
+        <span class="s3">// Thank the user for choosing a valid number.</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Thanks! You picked &quot; </span><span class="s2">+ </span><span class="s1">pick </span><span class="s2">+ </span><span class="s5">&quot;.&quot;</span><span class="s2">);</span>
+
+        <span class="s3">// Create a Random object for rolling dice.</span>
+        <span class="s1">Random random </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Random</span><span class="s2">();</span>
+        <span class="s3">// Start the number of rolls at zero.</span>
+        <span class="s0">int </span><span class="s1">rolls </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+        <span class="s3">// Start with a roll that is not six.</span>
+        <span class="s0">int </span><span class="s1">roll </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+        <span class="s3">// Keep rolling until a six appears.</span>
+        <span class="s0">while </span><span class="s2">(</span><span class="s1">roll </span><span class="s2">!= </span><span class="s4">6</span><span class="s2">) {</span>
+            <span class="s1">roll </span><span class="s2">= </span><span class="s1">random</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">(</span><span class="s4">6</span><span class="s2">) + </span><span class="s4">1</span><span class="s2">;</span>
+            <span class="s1">rolls</span><span class="s2">++;</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Rolled a &quot; </span><span class="s2">+ </span><span class="s1">roll</span><span class="s2">);</span>
+        <span class="s2">}</span>
+        <span class="s3">// Print how many rolls it took.</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;It took &quot; </span><span class="s2">+ </span><span class="s1">rolls </span><span class="s2">+ </span><span class="s5">&quot; rolls to get a 6.&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
